@@ -1,0 +1,55 @@
+html{
+    font-size: 13px;
+}
+body{
+    perspective: 1500px;
+}
+.leaflet{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:30vw;
+    height:30vw;
+    margin:auto;
+    transform-style: preserve-3d;
+    outline: 2px solid black;
+}
+.page{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid red;
+    font-size: 3rem;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+.page:nth-child(1){
+    z-index: 2;
+    transform-origin: left;
+}
+.page:nth-child(3){
+    z-index: 1;
+    transform-origin: right;
+}
+.page:nth-child(1).page-flipped {
+    transform: rotateY(-150deg);
+}
+.page:nth-child(3).page-flipped {
+    transform: rotateY(150deg);
+}
+.page-face {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: cornsilk;
+    backface-visibility: hidden;
+}
+.page-face:nth-child(2) {
+    transform: rotateY(180deg);
+}
